@@ -2,20 +2,9 @@ import { Injectable } from '@nestjs/common';
 import { ConfigManager } from '@nestjsplus/config';
 import * as Joi from '@hapi/joi';
 import { KnexOptions } from '@nestjsplus/knex';
-import {
-  MassiveConnectOptions,
-  MassiveConfigOptions,
-} from '@nestjsplus/massive';
-
-import { resolve } from 'path';
 
 @Injectable()
 export class ConfigService extends ConfigManager {
-  // Our custom "schema"
-  // We supply it to the ConfigManager by extending the
-  // ConfigManager class and implementing the
-  // provideConfigSpec() method, which simply returns
-  // our custom schema
   provideConfigSpec() {
     return {
       host: {
@@ -33,14 +22,17 @@ export class ConfigService extends ConfigManager {
       user: {
         validate: Joi.string(),
         required: true,
+        default: 'postgres',
       },
       password: {
         validate: Joi.string(),
         required: true,
+        default: 'postgres',
       },
       database: {
         validate: Joi.string(),
         required: true,
+        default: 'postgres',
       },
     };
   }
@@ -56,22 +48,6 @@ export class ConfigService extends ConfigManager {
         database: this.get<string>('database'),
         port: this.get<number>('port'),
       },
-    };
-  }
-
-  createMassiveConnectOptions(): MassiveConnectOptions {
-    return {
-      host: this.get<string>('host'),
-      user: this.get<string>('user'),
-      password: this.get<string>('password'),
-      database: this.get<string>('database'),
-      port: this.get<number>('port'),
-    };
-  }
-
-  createMassiveConfigOptions(): MassiveConfigOptions {
-    return {
-      scripts: resolve(__dirname, '../../', 'dbscripts'),
     };
   }
 }
