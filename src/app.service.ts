@@ -10,7 +10,7 @@ export class AppService {
     @Inject(KNEX_CONNECTION) private readonly knex,
   ) {}
 
-  async getCats() {
+  async findAll() {
     return await this.knex('users')
       .select('*');
   }
