@@ -14,7 +14,7 @@ npm i
 2. use knex local package for creating migration
 
 ```bash
-	node_modules/.bin/knex migrate:make NAME (there is you can input the name of migration)
+node_modules/.bin/knex migrate:make NAME (there is you can input the name of migration)
 ```
 
 example:
@@ -24,3 +24,5 @@ example:
 ```
 
 And also there is you can use another commands from migration cli of [knex](http://knexjs.org/#Migrations-CLI)
+
+There is [prettier](https://github.com/prettier/prettier) as a formatter, [husky](https://github.com/typicode/husky for precommit hooks
