@@ -25,4 +25,4 @@ example:
 
 And also there is you can use another commands from migration cli of [knex](http://knexjs.org/#Migrations-CLI)
 
-There is [prettier](https://github.com/prettier/prettier) as a formatter, [husky](https://github.com/typicode/husky for precommit hooks
+There is [prettier](https://github.com/prettier/prettier) as a formatter, [husky](https://github.com/typicode/husky) for precommit hooks
