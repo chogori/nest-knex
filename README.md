@@ -1,4 +1,4 @@
-### Nest-knex
+### Nest.js with Knex. template for projects
 
 ##### This is just a little try to integrate knex with nest.js
 
